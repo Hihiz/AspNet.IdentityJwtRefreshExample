@@ -1,0 +1,6 @@
+@AspNet.IdentityJwtRefreshExample_HostAddress = http://localhost:5168
+
+GET {{AspNet.IdentityJwtRefreshExample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

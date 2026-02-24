@@ -118,3 +118,18 @@ Refresh Token пользователя сбрасывается.
 ### GET /api/account/auth-user
 Требует авторизацию пользователя.
 Возвращает Claims текущего пользователя (из JWT).
+### POST /api/account/refresh-token
+```json
+{
+  "accessToken": "expired-access-token",
+  "refreshToken": "current-refresh-token"
+}
+```
+Ответ:
+Новая пара токенов
+```json
+{
+  "accessToken": "new-access-token",
+  "refreshToken": "new-refresh-token"
+}
+```

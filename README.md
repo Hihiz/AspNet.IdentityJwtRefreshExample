@@ -31,3 +31,10 @@ Refresh Token:
 * хранится в БД
 * ротируется при обновлении
 * становится недействительным после начала новой сессии или обновлении пары токенов
+
+## Стек
+* ASP.NET Core 10.0
+* ASP.NET Core Identity
+* Microsoft.AspNetCore.Authentication.JwtBearer
+* EF Core (Code First)
+* MS SQL

@@ -135,3 +135,6 @@ Refresh Token пользователя сбрасывается.
 ```
 ### POST /api/account/revoke-users
 Защищен атрибутом `[Authorize(Roles = "Admin")]` для сброса Refresh Token всем пользователям
+
+## OrderController
+Метод `GET /api/order` защищен атрибутом `[Authorize(Roles = "User, Admin")]`

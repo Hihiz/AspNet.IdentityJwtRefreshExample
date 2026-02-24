@@ -112,3 +112,5 @@ Refresh Token пользователя сбрасывается.
   "refreshToken": "refresh-token"
 }
 ```
+### POST /api/account/logout
+Требует авторизацию пользователя.

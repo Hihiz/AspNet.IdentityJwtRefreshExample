@@ -38,3 +38,17 @@ Refresh Token:
 * Microsoft.AspNetCore.Authentication.JwtBearer
 * EF Core (Code First)
 * MS SQL
+
+## JWT Конфигурация
+```json
+ "Jwt": {
+   "SecretKey": "superSecretKey__@123456789123456",
+   "Issuer": "https://localhost.5001",
+   "Audience": "https://localhost:5001",
+   "TokenValidityInMinutes": 1,
+   "RefreshTokenValidityInMinutes": 3
+ }
+```
+Для демонстрации:
+* Access Token живёт - 1 минуту
+* Refresh Token живёт - 3 минуты

@@ -85,3 +85,16 @@ POST /api/account/login →
 POST /api/account/logout
 ```
 Refresh Token пользователя сбрасывается.
+
+## AccountController
+Пример тестовых данных:
+### POST /api/account/register
+```json
+{
+  "firstName": "UserFirstName",
+  "lastName": "UserLastName",
+  "userName": "user.name",
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+```

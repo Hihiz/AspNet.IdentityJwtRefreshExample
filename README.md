@@ -133,3 +133,5 @@ Refresh Token пользователя сбрасывается.
   "refreshToken": "new-refresh-token"
 }
 ```
+### POST /api/account/revoke-users
+Защищен атрибутом `[Authorize(Roles = "Admin")]` для сброса Refresh Token всем пользователям

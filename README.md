@@ -66,3 +66,22 @@ Refresh Token:
 * создается пользователь с ролью `Admin`
   * email: `admin@example.com`
   * password: `Admin123!`
+
+## Поток работы токенов
+* Новая сессия:
+```
+POST /api/account/login →
+  AccessToken (1 минута)
+  RefreshToken (3 минуты)
+```
+* срок AccessToken истек:
+```
+ POST /api/account/refresh-token →
+    Новый AccessToken
+    Новый RefreshToken (старый становится недействительным)
+```
+* Logout:
+```
+POST /api/account/logout
+```
+Refresh Token пользователя сбрасывается.

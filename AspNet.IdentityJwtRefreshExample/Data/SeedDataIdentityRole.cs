@@ -12,7 +12,9 @@ namespace AspNet.IdentityJwtRefreshExample.Data
         {
             RoleManager<IdentityRole<long>> roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole<
                 long>>>();
-            
+            UserManager<ApplicationUser> userManager = serviceProvider.GetRequiredService<UserManager<
+                ApplicationUser>>();
+
             string[] roles = ["User", "Admin"];
 
             foreach (var role in roles)
@@ -27,7 +29,31 @@ namespace AspNet.IdentityJwtRefreshExample.Data
                         NormalizedName = role.ToUpper()
                     });
                 }
-            }          
+            }
+
+            // Создание администратора по умолчанию.
+            string adminEmail = "admin@example.com";
+
+            ApplicationUser? adminUser = await userManager.FindByEmailAsync(adminEmail);
+
+            if (adminUser is null)
+            {
+                ApplicationUser user = new ApplicationUser
+                {
+                    FirstName = "AdminFirstName",
+                    LastName = "AdminLastName",
+                    UserName = adminEmail,
+                    Email = adminEmail,
+                    EmailConfirmed = true,
+                    PhoneNumberConfirmed = true
+                };
+
+                string? adminPassword = "Admin123!";
+
+                await userManager.CreateAsync(user, adminPassword);
+
+                await userManager.AddToRoleAsync(user, "Admin");
+            }
         }
     }
 }

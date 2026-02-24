@@ -98,3 +98,17 @@ Refresh Token пользователя сбрасывается.
   "password": "Password123!"
 }
 ```
+### POST /api/account/login
+```json
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+```
+Ответ:
+```json
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "refreshToken": "refresh-token"
+}
+```

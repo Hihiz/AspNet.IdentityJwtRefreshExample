@@ -60,3 +60,9 @@ Refresh Token:
 ```c#
   await db.Database.MigrateAsync();
 ```
+
+Дополнительно выполняется начальная инициализация для таблиц ролей и пользователей: 
+* создаются роли `User`, `Admin`
+* создается пользователь с ролью `Admin`
+  * email: `admin@example.com`
+  * password: `Admin123!`

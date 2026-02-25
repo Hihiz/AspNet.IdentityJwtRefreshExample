@@ -74,7 +74,7 @@ namespace AspNet.IdentityJwtRefreshExample.Services
                     $"Пользователь с почтой {loginRequest.Email} не существует в системе.");
             }
 
-            // Проверяем пароль пользователя и входим в систему.
+            // Проверяем пароль пользователя.
             bool isPasswordValid = await _userManager.CheckPasswordAsync(user, loginRequest.Password!);
 
             if (!isPasswordValid)
